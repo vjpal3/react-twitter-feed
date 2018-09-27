@@ -13,42 +13,33 @@ import React from 'react';
 // />
 
 const Tweet = (props) => {
-  let mediaImage = () => {
-    if(props.mediaUrl !== "") {
-      return (
-        <img
-          src={props.mediaUrl}
-          alt="Media file"
-        />
-      );
-    }
-    return props.mediaUrl;  
-  };
-
   return (
     <div className="grid-container tweet-div">
-
-        <div className="grid-x grid-margin-x tweet-info-grid">
-          <div className="cell small-2 img-cell">
-            <img className="profileImg"
-              src={props.userProfilePic}
-              alt={props.userName}
-            />
-          </div>
-          <div className="cell small-10 info-cell">
-            <p><span className="user-info">
-                  {props.userName}&nbsp;
-                  <span className="user-info-date">
-                    @{props.userScreenName}
-                  </span>
-                </span>
-            <br />
-            {props.text}</p>
-            {mediaImage}
-
-          </div>
+      <div className="grid-x grid-margin-x tweet-info-grid">
+        <div className="cell small-2 img-cell">
+          <img className="profileImg"
+            src={props.userProfilePic}
+            alt={props.userName}
+          />
         </div>
+        <div className="cell small-10 info-cell">
+          <p><span className="user-info">
+                {props.userName}&nbsp;
+                <span className="user-info-date">
+                  @{props.userScreenName}
+                </span>
+              </span>
+          <br />
+          {props.text}</p>
 
+          { props.mediaUrl.length > 0 &&
+            <img
+              src={props.mediaUrl}
+              alt="Media file"
+            />
+          }
+        </div>
+      </div>
     </div>
 
   );
