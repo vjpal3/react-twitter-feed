@@ -1,0 +1,37 @@
+/* YOUR STYLING HERE */
+
+.tweet-div {
+  margin: 0 auto 2px auto;
+  width: 600px;
+  border: 2px solid #000000;
+  background-color: white;
+}
+
+.profileImg {
+  max-width: 50px;
+  height: auto;
+
+}
+
+.tweet-info-grid {
+  padding: 12px 0 0 0;
+}
+
+div.cell.small-2.img-cell {
+  margin-right: 0;
+   padding-right: 0;
+}
+
+div.cell.small-10.info-cell {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.user-info {
+  font-size: 0.9rem;
+}
+
+.user-info-date {
+  color: $grey;
+  font-weight: bold;
+}
