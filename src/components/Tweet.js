@@ -1,17 +1,5 @@
 import React from 'react';
 
-// <Tweet
-//   Key={tweetData.id_str}
-//   text={tweetData.text}
-//   userName={tweetData.user.name}
-//   userScreenName={tweetData.user.screen_name}
-//   userProfilePic={tweetData.user.profile_image_url}
-//   retweetCount={tweetData.retweet_count}
-//   favoriteCount={tweetData.favorite_count}
-//   favorited={tweetData.favorited}
-//   retweeted={tweetData.retweeted}
-// />
-
 const Tweet = (props) => {
   return (
     <div className="grid-container tweet-div">
@@ -23,7 +11,7 @@ const Tweet = (props) => {
           />
         </div>
         <div className="cell small-10 info-cell">
-          <p><span className="user-info">
+          <p className="tweet-info"><span className="user-info">
                 {props.userName}&nbsp;
                 <span className="user-info-date">
                   @{props.userScreenName}
@@ -33,17 +21,28 @@ const Tweet = (props) => {
           {props.text}</p>
 
           { props.mediaUrl.length > 0 &&
-            <img
+            <img className="mediaImage"
               src={props.mediaUrl}
               alt="Media file"
             />
           }
+
+          <p className="tweet-info">
+            <span className="icons reply"><i className="fa fa-reply" aria-hidden="true"></i></span> &emsp;&emsp;&emsp;
+            <span className={props.retweeted ? 'retweet' : 'icons'} >
+              <i className="fa fa-retweet" aria-hidden="true"></i>
+              &nbsp;&nbsp; {props.retweetCount}
+            </span> &emsp;&emsp;&emsp;
+            <span className={props.favorited ? 'favorite' : 'icons'}>
+              <i className="fa fa-heart" aria-hidden="true"></i>
+              &nbsp;&nbsp; {props.favoriteCount}
+            </span> &emsp;&emsp;&emsp;
+            <span className="icons more"><i className="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+          </p>
         </div>
       </div>
     </div>
-
   );
-
-
 };
+
 export default Tweet;

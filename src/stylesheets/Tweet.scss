@@ -35,3 +35,29 @@ div.cell.small-10.info-cell {
   color: $grey;
   font-weight: bold;
 }
+
+span.icons {
+  color: $grey;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+span.retweet {
+  color: $green;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+span.favorite {
+  color: $red;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+img.mediaImage {
+  margin-bottom: 15px;
+}
+
+.tweet-info {
+  margin-bottom: 5px;
+}
